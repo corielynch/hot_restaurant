@@ -69,7 +69,7 @@
 
       // Using a RegEx Pattern to remove spaces from searchedCharacter
       // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-      searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+      searchedCustomer = searchedCharacter.replace(/\s+/g, "").toLowerCase();
 
       $.get("/api/characters/" + searchedCharacter, function(data) {
         console.log(data);
