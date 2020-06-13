@@ -17,9 +17,9 @@ app.use(express.json());
 let customers = [
   {
     routeName: " ",
-    name: " ",
-    role: " ",
-    age: "",
+    PhoneNumber: " ",
+    Email: " ",
+    uniqueId: "",
      
   },
   
@@ -27,10 +27,10 @@ let customers = [
 
 let waitingList =  [
   {
-    routeName: "",
-    name: "",
-    PhoneNumber: "",
-    Email: "",
+    routeName: " ",
+    PhoneNumber: " ",
+    Email: " ",
+    uniqueId: "",
    
   },
 ];
@@ -43,13 +43,14 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
 app.get("/add", (req, res) => res.sendFile(path.join(__dirname, "add.html")));
 
+app.get("/tables", (req, res) => res.sendFile(path.join(__dirname, "view.html")));
 
 // Displays all characters
-app.get("/api/characters", (req, res) => res.json(customers));
+app.get("/api/customers", (req, res) => res.json(customers));
 
 
 // Displays a single character, or returns false
-app.get("/api/characters/:character", (req, res) => {
+app.get("/api/tables/:customer", (req, res) => {
   const chosen = req.params.customer;
 
   console.log(chosen);
@@ -64,7 +65,7 @@ app.get("/api/characters/:character", (req, res) => {
 });
 
 // Create New Characters - takes in JSON input
-app.post("/api/characters", (req, res) => {
+app.post("/api/tables", (req, res) => {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newCustomer = req.body;
