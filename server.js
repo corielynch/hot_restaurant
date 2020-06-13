@@ -43,7 +43,7 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
 app.get("/add", (req, res) => res.sendFile(path.join(__dirname, "add.html")));
 
-app.get("/tables", (req, res) => res.sendFile(path.join(__dirname, "view.html")));
+app.get("/tables", (req, res) => res.sendFile(path.join(__dirname, "tables.html")));
 
 // Displays all characters
 app.get("/api/customers", (req, res) => res.json(customers));
